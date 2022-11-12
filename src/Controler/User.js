@@ -27,8 +27,9 @@ export async function insertUser(req, res){
 
 export async function updateUser(req, res){
     let user = req.body;
+    console.log(user.nome, user.alvo, user.familia, user.id);
     openDb().then(db=>{
-        db.run('UPDATE user SET nome=?, alvo=?, familia=? WHERE ID=?', [user.nome, user.alvo, user.familia, user.ID]);
+        db.run('UPDATE user SET nome=?, alvo=?, familia=? WHERE id=?', [user.nome, user.alvo, user.familia, user.id]);
     });
     res.json({
         "statusCode": 200
