@@ -10,4 +10,4 @@ app.use(cors());
 import router from './routes.js'
 app.use(router);
 
-app.listen( 3001, ()=>console.log("API ONLINE."))
+app.listen(process.env.PORT || 3001, ()=>console.log("API ONLINE."))
